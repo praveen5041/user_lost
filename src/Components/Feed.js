@@ -29,36 +29,10 @@ export default function Feed() {
       </p>
     );
   };
-  // const [user_info,setuser_info]=useState('')
-  // console.log(user_info)
-
-  // const location = useLocation();
-  // useEffect(()=>{
-  //   if(location.user==null){
-  //     console.log("if statement",user_info)
-  //     // location.user=''
-  //   }
-  //   else{
-  //     // console.log("Else",user_info)
-  //     console.log(location.user)
-  //     setuser_info(location.user)
-  //     console.log(user_info)
-  //     // console.log("Else statement",user_info)
-  //   }
-  // },[])
-  // useEffect(()=>{
-  //   console.log(location.user)
-  //   localStorage.setItem('user',JSON.stringify(location.user))
-  //   setuser_info((localStorage.getItem('user')))
-  // },[])
-  // console.log("User info is :", location.user);
+   
+   
   setConstraint(true);
-  // var user_info
-  // if(NEW_USER===false){
-  //   user_info=location.user
-  //   setUser(true)
-  // }
-  // console.log(constraint.LOGGED_IN);
+  
   const [item, setitem] = useState("");
   const [Found_item, setFound_item] = useState();
   useEffect(() => {
@@ -88,13 +62,7 @@ export default function Feed() {
             created_date.getHours() +
             ":" +
             created_date.getMinutes();
-          // category.postitem.findOne({createdBy: item.createdBy}).populate('name')
-          // .exec(function (err, story) {
-          //   if (err) return err
-          //   console.log('The author is %s', story);
-          //   // prints "The author is Ian Fleming"
-          // });
-          // console.log(item.itemPictures[0].img)
+           
           if (item.type === "Lost" && item.status===true) {
             let user = false;
             if (item.createdBy === user_info._id) {
@@ -150,15 +118,7 @@ export default function Feed() {
                       Created by :{item.createdBy}
                     </Card.Text> */}
                     </Card.Body>
-                    {/* <ListGroup className="list-group-flush">
-                    <ListGroupItem>Cras justo odio</ListGroupItem>
-                    <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-                    <ListGroupItem>Vestibulum at eros</ListGroupItem>
-                  </ListGroup>
-                  <Card.Body>
-                    <Card.Link href="#">Card Link</Card.Link>
-                    <Card.Link href="#">Another Link</Card.Link>
-                  </Card.Body> */}
+                     
                   </Card>
                 </Col>
               </a>
