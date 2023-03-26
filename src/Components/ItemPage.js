@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import "../css/itempage.css";
 import sant from "../img/Santorini.jpg";
 import lodash from "lodash";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 // import { Carousel } from "react-bootstrap";
 import { LOGGED_IN, setConstraint } from "../constraints";
@@ -88,7 +88,7 @@ function ItemPage(props) {
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
-  const history = useHistory();
+  const history = useNavigate();
   setConstraint(true);
   // console.log(props.location.search.substring(1).split("=")[1].split("&")[0]);
   // console.log(props.location.search.substring(1).split("=")[2].split("/")[0]);

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../css/newSignup.css";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import { Spinner } from "react-bootstrap";
 // import developer from "../img/developer_outline I.svg";
@@ -12,7 +12,7 @@ function Login() {
   const [loading, setloading] = useState(false);
   let [info, setinfo] = useState("");
   const [user_info, setuser_info] = useState("");
-  const history = useHistory();
+  const history = useNavigate();
   function login() {
     setloading(true);
     // console.log(setinfo)

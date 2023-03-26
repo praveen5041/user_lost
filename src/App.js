@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React, { Fragment, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
  //import ReactDOM from 'react-dom';
 // import Navbar from './Components/Navbar'
 import Signup from './Components/Signup'
@@ -25,21 +25,25 @@ function App()
   
   return (
     <>
-    <Router>
-      <Switch>
-        <Route path='/' component={Home} exact/>
-        <Route path='/sign-up' component={Signup} exact/>
-        <Route path='/log-in' component={Login} />
-        <PrivateRoute path='/feed' component={Feed}  />
-        <Route path='/mylistings'  component={MyListings} exact />
-        <Route path='/responses' component={Response} exact />
-        <ToastProvider autoDismiss={true} placement={"bottom-right"}>
+     <Router>
+    
+      <Routes>
+          
+        <Route path='/' element={<Home/>} exact/>
+        <Route path='/sign-up' element={<Signup/>} exact/>
+        <Route path='/log-in' element={<Login/>} />
+        {/* <PrivateRoute path='/feed' element={<Feed/>} exact /> */}
+        <Route path='/mylistings'  element={<MyListings/>} exact />
+        <Route path='/responses'element={<Response/>} exact />
+        {/* <ToastProvider autoDismiss={true} placement={"bottom-right"}>
 
-          <Route path='/:item'  component={ItemPage} exact />
-        </ToastProvider>
+          <Route path='/:item'  element={<ItemPage/>} exact />
+        </ToastProvider> */}
         {/* <Route path='*' component={NotFound}/> */}
-      </Switch>
-    </Router>
+         
+        </Routes> 
+         
+        </Router>
     {/* <Signup/> */}
     </>
 
