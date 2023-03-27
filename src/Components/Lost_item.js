@@ -189,4 +189,5 @@ function LostItem() {
   );
 }
 
-export default LostItem;
+export default  LostItem;
+//export class LeComponent extends React.Component { ...props }

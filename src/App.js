@@ -25,25 +25,29 @@ function App()
   
   return (
     <>
-     <Router>
-    
+    <Router>
+    <Fragment>
       <Routes>
           
         <Route path='/' element={<Home/>} exact/>
         <Route path='/sign-up' element={<Signup/>} exact/>
         <Route path='/log-in' element={<Login/>} />
-        {/* <PrivateRoute path='/feed' element={<Feed/>} exact /> */}
+        {/* <PrivateRoute exact path='/feed' element={<Feed/>}  /> */}
+        <Route exact path='/' element={<PrivateRoute/>}>
+      <Route exact path='/' element={<Home/>}/>
+</Route>
         <Route path='/mylistings'  element={<MyListings/>} exact />
         <Route path='/responses'element={<Response/>} exact />
-        {/* <ToastProvider autoDismiss={true} placement={"bottom-right"}>
+        {/* <ToastProvider autoDismiss={true} placement={"bottom-right"}> */}
 
           <Route path='/:item'  element={<ItemPage/>} exact />
-        </ToastProvider> */}
+        {/* </ToastProvider> */}
         {/* <Route path='*' component={NotFound}/> */}
          
         </Routes> 
-         
-        </Router>
+        </Fragment>
+        </Router>  
+        
     {/* <Signup/> */}
     </>
 
