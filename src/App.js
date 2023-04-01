@@ -14,8 +14,8 @@ import ItemPage from './Components/ItemPage';
 // import Feed from './Components/Feed'
 import MyListings from './Components/MyListings'
 import { ToastProvider } from 'react-toast-notifications';
-//window.OneSignal = window.OneSignal || [];
-//const OneSignal = window.OneSignal;
+window.OneSignal = window.OneSignal || [];
+const OneSignal = window.OneSignal;
 
 function App()
 {
@@ -32,10 +32,12 @@ function App()
         <Route path='/' element={<Home/>} exact/>
         <Route path='/sign-up' element={<Signup/>} exact/>
         <Route path='/log-in' element={<Login/>} />
+        <Route path='/feed' element={<Feed/>}/>
+        {/* <PrivateRoute path='/feed' component={Feed}  /> */}
         {/* <PrivateRoute exact path='/feed' element={<Feed/>}  /> */}
-        <Route exact path='/' element={<PrivateRoute/>}>
+        {/* <Route exact path='/' element={<PrivateRoute/>}>
       <Route exact path='/' element={<Home/>}/>
-</Route>
+</Route> */}
         <Route path='/mylistings'  element={<MyListings/>} exact />
         <Route path='/responses'element={<Response/>} exact />
         {/* <ToastProvider autoDismiss={true} placement={"bottom-right"}> */}
